@@ -1,0 +1,394 @@
+{
+	"info": {
+		"_postman_id": "80b31c2b-3baf-4dec-983c-a7e1cb8089a2",
+		"name": "Delilah Resto Camilo Bravi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21153484"
+	},
+	"item": [
+		{
+			"name": "Crear Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"CamiloBravi\",\r\n    \"fullname\": \"Camilo Bravi\",\r\n    \"email\": \"camilobravi@gmail.com\",\r\n    \"phone\": \"35167896644\",\r\n    \"address\": \"Mauricio Yadarola 600\",\r\n    \"password\": \"MiclavePersonal\",\r\n    \"is_admin\": false\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login (Adm)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Emilio\",\r\n    \"password\": \"28Agosto\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login (No Adm)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"CamiloBravi\",\r\n    \"password\": \"MiclavePersonal\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver Productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Producto (Adm)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkVtaWxpbyIsInBhc3N3b3JkIjoiMjhBZ29zdG8iLCJpYXQiOjE2NzA3ODQzNTd9.IX6D1F6tLFM0QoK_OZlt6TAyGXlMgVbgRKfvkprgNxk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"product_name\": \"Alitas de Pollo Rebozadas\",\r\n    \"price\": 1350,\r\n    \"stock\": 1,\r\n    \"img_url\": \"dirección de la imagen del producto\",\r\n    \"category\": \"Pollo\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar Producto (Adm)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkVtaWxpbyIsInBhc3N3b3JkIjoiMjhBZ29zdG8iLCJpYXQiOjE2NzA3OTI2NzR9.M2FTYsfVU694q9E9XUH0KbHRXz0RWU_zWAL7xRXf9tE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"product_name\": \"Alitas de Pollo Rebozadas con salsa picante\",\r\n    \"price\": 1350,\r\n    \"stock\": 1,\r\n    \"img_url\": \"dirección de la imagen del producto\",\r\n    \"category\": \"Pollo\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/productos/14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"productos",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Producto (Adm)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkVtaWxpbyIsInBhc3N3b3JkIjoiMjhBZ29zdG8iLCJpYXQiOjE2NzA3OTI2NzR9.M2FTYsfVU694q9E9XUH0KbHRXz0RWU_zWAL7xRXf9tE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/productos/14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"productos",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Pedido",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkVtaWxpbyIsInBhc3N3b3JkIjoiMjhBZ29zdG8iLCJpYXQiOjE2NzA3OTI2NzR9.M2FTYsfVU694q9E9XUH0KbHRXz0RWU_zWAL7xRXf9tE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"products\": [\r\n    {\r\n    \"product_id\": 2,\r\n    \"quantity\": 3\r\n    }, {\r\n    \"product_id\": 7,\r\n    \"quantity\": 2\r\n    }\r\n    ],\r\n    \"payment_method\": \"Efectivo\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/pedidos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pedidos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver Pedidos (Adm)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkVtaWxpbyIsInBhc3N3b3JkIjoiMjhBZ29zdG8iLCJpYXQiOjE2NzA3OTI2NzR9.M2FTYsfVU694q9E9XUH0KbHRXz0RWU_zWAL7xRXf9tE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/pedidos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pedidos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver Pedidos (No Adm)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNhbWlsb0JyYXZpIiwicGFzc3dvcmQiOiJNaWNsYXZlUGVyc29uYWwiLCJpYXQiOjE2NzA3OTMzNjR9.RZT71mYafUCujKcvAs8LyfUgnBPI2G1xb7X7M0klhsg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/pedidos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pedidos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar Estado de Pedido (Adm)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkVtaWxpbyIsInBhc3N3b3JkIjoiMjhBZ29zdG8iLCJpYXQiOjE2NzA3OTM2Mzl9.1sM1Wh2sV3UTL4sbKr6JPmlhBEjK8gudGLkK-LGF22A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"Enviado\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/pedidos/14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pedidos",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Pedido",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkVtaWxpbyIsInBhc3N3b3JkIjoiMjhBZ29zdG8iLCJpYXQiOjE2NzA3OTM2Mzl9.1sM1Wh2sV3UTL4sbKr6JPmlhBEjK8gudGLkK-LGF22A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/pedidos/13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pedidos",
+						"13"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
