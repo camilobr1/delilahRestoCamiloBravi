@@ -12,7 +12,7 @@ Este proyecto planteó la creación de un sistema de pedidos online para un rest
 - Postman
 - Swagger
 
-## Documentación 📗
+## Documentación 
 
 Archivo `spec.yaml` Para verlo mejor, puede copiarlo y abrirlo con [Swagger](https://editor.swagger.io/)
 
@@ -24,7 +24,7 @@ Clonar el repositorio de [GitHub](https://github.com/camilobr1/delilahRestoCamil
 git clone https://github.com/camilobr1/delilahRestoCamiloBravi.git
 ```
 
-## Dependencias 🟢
+## Dependencias 
 
 Instalar las dependencias requeridas para el correcto funcionamiento de la aplicación
 
@@ -38,7 +38,7 @@ npm install cors
 npm install nodemon
 ```
 
-## Base de datos SQL 🐬
+## Base de datos SQL 
 
 Documento `delilahrestocamilo.sql`
 
@@ -47,7 +47,7 @@ Documento `delilahrestocamilo.sql`
 2. Abrir el navegador con localhost, phpmyadmin y en sql crear el schema "delilahrestocamilo".
 3. Replicar las tablas del documento.
 
-## Inicio del servidor 🔩
+## Inicio del servidor 
 
 En la terminal:
 
